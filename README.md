@@ -11,4 +11,4 @@ In the angular cli run following commands to get these libraries
 ng install @angular/material
 ng install @angular/flex-layout
 
-Note: I have used Angular 5 vesrion. The above libraries versions have to be compatible with Angular 5.
+Note: I have used Angular 5 version. The above libraries versions have to be compatible with Angular 5.
