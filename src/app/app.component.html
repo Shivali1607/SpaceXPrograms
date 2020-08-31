@@ -1,0 +1,65 @@
+<mat-card class="common"><span class="header">SpaceX Launch Programs</span>
+
+    <div fxLayout="row" fxLayoutGap="1%" style="margin-top:1%" fxLayout.xs="column">
+        <mat-card fxFlex="20%" fxFlex.sm="35%" fxFlex.md="25%" class="filter">
+            <span style="font-weight:bold; font-size:17px;">Filters</span>
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <div style="margin-top:10px;">Launch Year</div>
+                <hr style="width: 150px;">
+
+                <mat-button-toggle-group [(value)]="clickedYear" (change)="filterAll()" fxLayoutWrap fxLayoutGap="3%" fxLayoutAlign="center center">
+                    <mat-button-toggle value="2006" class="filterButton" ngClass.xs="filterButtonMob">2006</mat-button-toggle>
+                    <mat-button-toggle value="2007" class="filterButton" ngClass.xs="filterButtonMob">2007</mat-button-toggle>
+                    <mat-button-toggle value="2008" class="filterButton" ngClass.xs="filterButtonMob">2008</mat-button-toggle>
+                    <mat-button-toggle value="2009" class="filterButton" ngClass.xs="filterButtonMob">2009</mat-button-toggle>
+                    <mat-button-toggle value="2010" class="filterButton" ngClass.xs="filterButtonMob">2010</mat-button-toggle>
+                    <mat-button-toggle value="2011" class="filterButton" ngClass.xs="filterButtonMob">2011</mat-button-toggle>
+                    <mat-button-toggle value="2012" class="filterButton" ngClass.xs="filterButtonMob">2012</mat-button-toggle>
+                    <mat-button-toggle value="2013" class="filterButton" ngClass.xs="filterButtonMob">2013</mat-button-toggle>
+                    <mat-button-toggle value="2014" class="filterButton" ngClass.xs="filterButtonMob">2014</mat-button-toggle>
+                    <mat-button-toggle value="2015" class="filterButton" ngClass.xs="filterButtonMob">2015</mat-button-toggle>
+                    <mat-button-toggle value="2016" class="filterButton" ngClass.xs="filterButtonMob">2016</mat-button-toggle>
+                    <mat-button-toggle value="2017" class="filterButton" ngClass.xs="filterButtonMob">2017</mat-button-toggle>
+                    <mat-button-toggle value="2018" class="filterButton" ngClass.xs="filterButtonMob">2018</mat-button-toggle>
+                    <mat-button-toggle value="2019" class="filterButton" ngClass.xs="filterButtonMob">2019</mat-button-toggle>
+                    <mat-button-toggle value="2020" class="filterButton" ngClass.xs="filterButtonMob">2020</mat-button-toggle>
+                </mat-button-toggle-group>
+
+                <div style="margin-top:10px;">Successful Launch</div>
+                <hr style="width: 150px;">
+                <mat-button-toggle-group [(value)]="successfulLaunch" (change)="filterLaunch()" fxLayoutGap="3%" fxLayoutAlign="center center">
+                    <mat-button-toggle value="true" class="filterButton">True</mat-button-toggle>
+                    <mat-button-toggle value="false" class="filterButton">False</mat-button-toggle>
+                </mat-button-toggle-group>
+                <div style="margin-top:10px;">Successful Landing</div>
+                <hr style="width: 150px;">
+                <mat-button-toggle-group [(value)]="successfulLand" (change)="filterLand()" fxLayoutGap="3%" fxLayoutAlign="center center">
+                    <mat-button-toggle value="true" class="filterButton">True</mat-button-toggle>
+                    <mat-button-toggle value="false" class="filterButton">False</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </mat-card>
+        <div fxFlex fxLayout="row" fxLayoutWrap fxLayoutGap="1.5%" fxLayoutAlign="center" fxLayout.xs="column" fxLayoutAlign.xs="center center">
+            <mat-card fxFlex="23%" fxFlex.sm="47%" fxFlex.md="40%" class="card" ngClass.xs="cardMob" *ngFor="let ele of spaceXDetails">
+                <div fxLayout="column" fxLayoutGap="10px">
+                    <div style="background-color: #F3F0EF;" fxLayoutAlign="center">
+                        <img class="image" src="{{ele.links['mission_patch_small']}}">
+                    </div>
+                    <span class="flight">{{ele.mission_name}} #{{ele.flight_number}}</span>
+                    <div class="font1">Mission Ids: <span class="font2">
+                    <span>{{ '{' }}</span> {{ele.mission_id}}
+                        <span>{{ '}' }}</span>
+                        </span>
+                    </div>
+                    <div class="font1">Launch Year: <span class="font2">{{ele.launch_year}}</span></div>
+                    <div class="font1">Successful Launch: <span class="font2">{{ele.launch_success}}</span></div>
+                    <div class="font1">Successful Landing: <span class="font2">{{ele.rocket['first_stage']['cores']['0']['land_success']}}</span></div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    <br>
+    <div fxLayoutAlign="center">
+        <span><b>Developed by:</b>{{ '{' }}Shivali Pandey{{ '}' }}</span>
+    </div>
+</mat-card>

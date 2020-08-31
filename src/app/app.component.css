@@ -1,0 +1,75 @@
+.common{
+    font-family: sans-serif;
+    background-color: #F3F0EF;
+}
+
+.header{
+    font-weight:800;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-bottom: 2%;
+}
+
+.card{
+    height: 345px; 
+    background-color: white;
+    margin-bottom: 1.5%;
+}
+
+.cardMob{
+    width: 260px;
+    height: 345px; 
+    background-color: white;
+    margin-bottom: 1.5%;
+}
+
+.filter{
+    background-color: white;
+    height: fit-content;
+}
+
+.filterButton{
+    margin-bottom: 12px;
+    border-radius: 6px;
+    /* margin-right: 5px; */
+    background-color: #9edb9c;
+    width: 90px;
+}
+
+.filterButtonMob{
+    margin-bottom: 12px;
+    border-radius: 6px;
+   /*  margin-right: 5px; */
+    background-color: #9edb9c;
+    width: 94px;
+}
+
+.mat-button-toggle-group{
+    box-shadow: none;
+}
+
+.mat-button-toggle-checked{
+    background-color: #58BD4E;
+}
+
+.image{
+    width: 156px;
+    height: 150px;
+}
+
+.flight{
+    font-size: 14px;
+    color: cornflowerblue;
+    font-weight: 700;
+}
+
+.font1{
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.font2{
+    font-size: 12px;
+    color: cornflowerblue;
+    font-weight: 100;
+}
